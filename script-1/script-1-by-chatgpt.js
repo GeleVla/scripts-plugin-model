@@ -28,7 +28,7 @@ function main() {
 
     // Calculate days left in the month.
     var today = new Date();
-    var endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0); 
+    var endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
     var daysLeft = endOfMonth.getDate() - today.getDate();
 
     // Adjust the daily budget for each campaign.
@@ -38,7 +38,7 @@ function main() {
     var campaignIterator = AdsApp.campaigns()
         .withCondition("Status = ENABLED")
         .get();
-    
+
     while (campaignIterator.hasNext()) {
         var campaign = campaignIterator.next();
         campaign.setBudget(dailyBudget);
